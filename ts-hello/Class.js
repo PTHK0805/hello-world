@@ -1,12 +1,18 @@
-var Point = /** @class */ (function () {
-    function Point(x, y) {
-        this.x = x;
-        this.y = y;
+class Point {
+    constructor(_x, _y) {
+        this._x = _x;
+        this._y = _y;
     }
-    Point.prototype.draw = function () {
-        console.log("X: ".concat(this.x, ", Y: ").concat(this.y));
-    };
-    return Point;
-}());
-var point = new Point(2, 1);
+    draw() {
+        console.log(`X: ${this._x}, Y: ${this._y}`);
+    }
+    get x() {
+        return this._x;
+    }
+    set x(value) {
+        this._x = value;
+    }
+}
+const point = new Point(2, 1);
+point.x = 10;
 point.draw();
