@@ -25,6 +25,9 @@ import { Component } from "@angular/core";
     <div (click)="onDivClick()">
       <button class="btn btn-primary" (click)="onClick($event)">Click</button>
     </div>
+
+    <!--<input type="text" (keyup)="onKeyUp($event)">-->
+    <input type="text" (keyup.enter)="onKeyUp()">
   `,
 })
 
@@ -44,6 +47,16 @@ export class CoursesComponent {
     console.log('Button Clicked', $event);
   }
 
+  // Event Filtering
+
+  //onKeyUp($event:any) {
+  //  if ($event.keycode === 13) console.log('Enter is pressed');
+  //}
+
+  onKeyUp() {
+    console.log('Enter was clicked')
+  }
+  
   constructor(service: CourseService) {
 
     this.courses = service.getCourse();
