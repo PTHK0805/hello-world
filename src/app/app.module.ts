@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { FormsModule } from '@angular/forms';
+import { SummaryPipe } from './summary.pipe';
+import { StarComponent } from './star/star.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { FormsModule } from '@angular/forms';
     CoursesComponent,
     CourseComponent,
     AuthorsComponent,
+    SummaryPipe,
+    StarComponent,
   ],
   imports: [
     BrowserModule,
