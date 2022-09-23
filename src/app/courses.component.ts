@@ -5,22 +5,20 @@ import { EmailValidator } from '@angular/forms';
 @Component({
   selector: 'courses',
   template: `
-    <h1>{{title}}</h1>
-    
-    <input [(ngModel)]="email" type="email" (keyup.enter)="onKeyUp()">
+    {{course.title | uppercase | lowercase}} <br/>
+    {{course.rating | number:'1.2-2'}} <br/>
+    {{course.student | number}} <br/>
+    {{course.price | currency:'USD':true}} <br/>
+    {{course.releaseDate | date:'shortDate'}} <br/>
   `,
 })
 
 export class CoursesComponent {
-  title = 'List of Courses';
- 
-  email = "example@gmail.com";
-
-  onKeyUp() {
-    console.log(this.email);
-  }
-
-  constructor(service: CourseService) {
-
+  course = {
+    title: "The Complete Angular Course",
+    rating: 4.9745,
+    student: 30123,
+    price: 190.95,
+    releaseDate: new Date(2022,11,1)
   }
 }
