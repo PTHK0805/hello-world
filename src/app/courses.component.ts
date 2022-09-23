@@ -27,7 +27,8 @@ import { Component } from "@angular/core";
     </div>
 
     <!--<input type="text" (keyup)="onKeyUp($event)">-->
-    <input type="text" (keyup.enter)="onKeyUp()">
+    <!--<input type="text" (keyup.enter)="onKeyUp($event)">-->
+    <input #email type="email" (keyup.enter)="onKeyUp(email.value)">
   `,
 })
 
@@ -53,8 +54,12 @@ export class CoursesComponent {
   //  if ($event.keycode === 13) console.log('Enter is pressed');
   //}
 
-  onKeyUp() {
-    console.log('Enter was pressed')
+  //onKeyUp($event:any) {
+  //  console.log($event.target.value)
+  //}
+
+  onKeyUp(email:string) {
+    console.log(email);
   }
 
   constructor(service: CourseService) {
