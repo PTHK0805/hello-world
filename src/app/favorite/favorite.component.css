@@ -1,5 +1,6 @@
 span {
   display: inline-block;
+  transition: .6s;
 }
 
 .circle {
