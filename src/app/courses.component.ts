@@ -54,9 +54,9 @@ export class CoursesComponent {
   //}
 
   onKeyUp() {
-    console.log('Enter was clicked')
+    console.log('Enter was pressed')
   }
-  
+
   constructor(service: CourseService) {
 
     this.courses = service.getCourse();
