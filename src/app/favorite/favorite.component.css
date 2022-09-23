@@ -1,0 +1,19 @@
+span {
+  display: inline-block;
+}
+
+.circle {
+  border : 2px solid #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.circle-empty {
+  border : 2px solid #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+}

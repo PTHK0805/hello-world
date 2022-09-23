@@ -1,3 +1,4 @@
+import { FavoriteComponent } from './favorite/favorite.component';
 import { AuthorsService } from './authors/authors.service';
 
 import { CourseService } from './courses.service';
@@ -11,7 +12,6 @@ import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
-import { StarComponent } from './star/star.component';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { StarComponent } from './star/star.component';
     CourseComponent,
     AuthorsComponent,
     SummaryPipe,
-    StarComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
