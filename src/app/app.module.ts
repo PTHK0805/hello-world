@@ -12,6 +12,7 @@ import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
+import { PanelComponent } from './panel/panel.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SummaryPipe } from './summary.pipe';
     CourseComponent,
     AuthorsComponent,
     SummaryPipe,
-    FavoriteComponent
+    FavoriteComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
