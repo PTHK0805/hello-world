@@ -7,18 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hello-world';
-  post = {
-    title: 'Title',
-    isFavorite: true,
-  }
+//  title = 'hello-world';
+//  post = {
+//    title: 'Title',
+//    isFavorite: true,
+//  }
+//
+//  tweet = {
+//    likesCount: 10,
+//    isLike: false
+//  }
+//
+//  onFavoriteChange(eventArgs: FavoriteChangedEventArgs) {
+//    console.log('Favorite changed: ', eventArgs);
+//  }
 
-  tweet = {
-    likesCount: 10,
-    isLike: false
-  }
+  courses = ['HTML', 'CSS', 'Javascript', 'Angular'];
 
-  onFavoriteChange(eventArgs: FavoriteChangedEventArgs) {
-    console.log('Favorite changed: ', eventArgs);
+  doWeHaveCourses() {
+    return (this.courses.length > 0) ? true : false;
   }
 }

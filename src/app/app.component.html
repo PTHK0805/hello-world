@@ -9,5 +9,21 @@
   </div>
 </bootstrap-panel>-->
 
-<app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLike">
-</app-like>
+<!--<app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLike">
+</app-like>-->
+
+<div *ngIf="doWeHaveCourses(); 
+      then coursesList 
+      else noCourses"></div>
+
+<ng-template #coursesList>
+  <ul>
+    <li *ngFor="let course of courses">
+      {{course}}
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #noCourses>
+  There is no Courses available.
+</ng-template>
