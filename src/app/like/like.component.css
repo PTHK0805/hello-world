@@ -1,0 +1,16 @@
+span {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.glyphicon{
+  cursor: pointer;
+}
+
+.glyphicon-heart{
+  color: #ccc;
+}
+
+.glyphicon-heart.active {
+  color: deeppink;
+}

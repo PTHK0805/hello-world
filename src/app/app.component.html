@@ -1,6 +1,5 @@
-
 <!--<favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>-->
-<bootstrap-panel>
+<!--<bootstrap-panel>
   <ng-container class="heading">
     Heading
   </ng-container>
@@ -8,4 +7,7 @@
     <h2>Body</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quidem.</p>
   </div>
-</bootstrap-panel>
+</bootstrap-panel>-->
+
+<app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLike">
+</app-like>

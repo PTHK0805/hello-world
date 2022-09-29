@@ -13,6 +13,7 @@ import { AuthorsComponent } from './authors/authors.component';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { PanelComponent } from './panel/panel.component';
+import { LikeComponent } from './like/like.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PanelComponent } from './panel/panel.component';
     AuthorsComponent,
     SummaryPipe,
     FavoriteComponent,
-    PanelComponent
+    PanelComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
