@@ -23,6 +23,7 @@ export class AppComponent {
 //  }
 
   courses = ['HTML', 'CSS', 'Javascript', 'Angular'];
+  viewMode = 'map';
 
   doWeHaveCourses() {
     return (this.courses.length > 0) ? true : false;
