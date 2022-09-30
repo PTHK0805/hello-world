@@ -52,3 +52,9 @@
   <div *ngSwitchCase="'list'">List View Content</div>
   <div *ngSwitchDefault>OtherWise</div>
 </div>
+
+<ul>
+  <li *ngFor="let course of secondCourses; index as i ; even as e">
+    {{ i }} - {{ course.name }} <span *ngIf="e">Even</span>
+  </li>
+</ul>
