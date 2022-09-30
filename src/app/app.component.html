@@ -53,8 +53,11 @@
   <div *ngSwitchDefault>OtherWise</div>
 </div>
 
+<button class="btn btn-primary" (click)="onAdd()">Add</button>
 <ul>
   <li *ngFor="let course of secondCourses; index as i ; even as e">
     {{ i }} - {{ course.name }} <span *ngIf="e">Even</span>
+
+    <button class="btn btn-secondary" (click)="onRemove(course)">Remove</button>
   </li>
 </ul>

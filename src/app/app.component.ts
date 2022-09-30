@@ -24,12 +24,22 @@ export class AppComponent {
 
   courses = ['HTML', 'CSS', 'Javascript', 'Angular'];
   viewMode = 'map';
+  courseNumber = 0;
+  courseId = 0;
   secondCourses = [
-    {id:1, name:'course1'},
-    {id:2, name:'course2'},
-    {id:3, name:'course3'},
+    { id: ++this.courseId, name: `course${++this.courseNumber}` },
+    { id: ++this.courseId, name: `course${++this.courseNumber}` },
+    { id: ++this.courseId, name: `course${++this.courseNumber}` },
   ]
 
+  onAdd() {
+    this.secondCourses.push({ id: ++this.courseId, name: `course${++this.courseNumber}` });
+  }
+
+  onRemove(course: any) {
+    let index = this.secondCourses.indexOf(course);
+    this.secondCourses.splice(index, 1);
+  }
   doWeHaveCourses() {
     return (this.courses.length > 0) ? true : false;
   }
