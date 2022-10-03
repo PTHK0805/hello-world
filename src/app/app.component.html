@@ -62,3 +62,14 @@
     <button class="btn btn-secondary" (click)="onRemove(course)">Remove</button>
   </li>
 </ul>
+
+<button
+  [ngStyle]="{
+    'backgroundColor' : canSave ? 'blue' : 'gray',
+    'color' : canSave ? 'white' : 'black',
+    'border' : 0
+  }"
+  (click)="canSave = !canSave"
+  >
+Save
+</button>

@@ -51,4 +51,6 @@ export class AppComponent {
   trackCourse(index:any, course:any) {
     return course ? course.id : undefined;
   }
+
+  canSave = true;
 }
