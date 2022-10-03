@@ -15,6 +15,7 @@ import { SummaryPipe } from './summary.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { InputFormatDirective } from './directives/input-format.directive';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { InputFormatDirective } from './directives/input-format.directive';
     FavoriteComponent,
     PanelComponent,
     LikeComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
