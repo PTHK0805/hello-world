@@ -1,1 +1,13 @@
-<span class="" [class.circle]="isFavorite" [class.circle-empty]="!isFavorite" (click)="onClick()"></span>
+<!--<span class="" 
+    [class.circle]="isFavorite" 
+    [class.circle-empty]="!isFavorite"
+    (click)="onClick()">
+</span>-->
+
+<span class="" 
+    [ngClass]="{
+      'circle' : isFavorite,
+      'circle-empty' : !isFavorite
+    }"
+    (click)="onClick()">
+</span>

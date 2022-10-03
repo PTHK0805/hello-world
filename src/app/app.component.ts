@@ -8,19 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 //  title = 'hello-world';
-//  post = {
-//    title: 'Title',
-//    isFavorite: true,
-//  }
+  post = {
+    title: 'Title',
+    isFavorite: true,
+  }
 //
 //  tweet = {
 //    likesCount: 10,
 //    isLike: false
 //  }
 //
-//  onFavoriteChange(eventArgs: FavoriteChangedEventArgs) {
-//    console.log('Favorite changed: ', eventArgs);
-//  }
+  onFavoriteChange(eventArgs: FavoriteChangedEventArgs) {
+    console.log('Favorite changed: ', eventArgs);
+  }
 
   courses = ['HTML', 'CSS', 'Javascript', 'Angular'];
   viewMode = 'map';
