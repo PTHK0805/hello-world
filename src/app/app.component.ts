@@ -26,11 +26,7 @@ export class AppComponent {
   viewMode = 'map';
   courseNumber = 0;
   courseId = 0;
-  secondCourses = [
-    { id: ++this.courseId, name: `course${++this.courseNumber}` },
-    { id: ++this.courseId, name: `course${++this.courseNumber}` },
-    { id: ++this.courseId, name: `course${++this.courseNumber}` },
-  ]
+  secondCourses:any;
 
   onAdd() {
     this.secondCourses.push({ id: ++this.courseId, name: `course${++this.courseNumber}` });
@@ -42,5 +38,17 @@ export class AppComponent {
   }
   doWeHaveCourses() {
     return (this.courses.length > 0) ? true : false;
+  }
+
+  loadCourses() {
+    return this.secondCourses = [
+      { id: 1, name: 'course1'},
+      { id: 2, name: 'course2'},
+      { id: 3, name: 'course3'},
+    ]
+  }
+
+  trackCourse(index:any, course:any) {
+    return course ? course.id : undefined;
   }
 }
