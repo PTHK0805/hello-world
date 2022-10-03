@@ -53,4 +53,10 @@ export class AppComponent {
   }
 
   canSave = true;
+  task = {
+    title: 'Review Application',
+    assignee: {
+      name : null
+    }
+  }
 }
