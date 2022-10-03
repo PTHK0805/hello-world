@@ -75,4 +75,8 @@ Save
 </button>
 <br>
 
-<span> {{task.assignee?.name}}</span>
+<span> {{task.assignee.name}}</span>
+<br>
+
+<input type="text" appInputFormat [format]="'lowercase'">
+<!--<input type="text" [appInputFormat]="'lowercase'">-->

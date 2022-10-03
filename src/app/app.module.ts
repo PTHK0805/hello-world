@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { InputFormatDirective } from './directives/input-format.directive';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LikeComponent } from './like/like.component';
     SummaryPipe,
     FavoriteComponent,
     PanelComponent,
-    LikeComponent
+    LikeComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,
