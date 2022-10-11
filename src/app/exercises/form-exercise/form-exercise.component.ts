@@ -18,7 +18,7 @@ export class FormExerciseComponent implements OnInit {
   }
 
   submit(f:any) {
-    console.log(f);
+    console.log(f.value);
   }
 
   log(x: any) {
