@@ -10,13 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { InputFormatDirective } from './directives/input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormExerciseComponent } from './exercises/form-exercise/form-exercise.component';
+import { SignUpFormComponent } from './reactive-form/signup-form/signup-form.component';
 
 
 @NgModule({
@@ -31,12 +32,14 @@ import { FormExerciseComponent } from './exercises/form-exercise/form-exercise.c
     LikeComponent,
     InputFormatDirective,
     ContactFormComponent,
-    FormExerciseComponent
+    FormExerciseComponent,
+    SignUpFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CourseService,
