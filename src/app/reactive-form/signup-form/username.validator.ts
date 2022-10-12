@@ -10,17 +10,17 @@ export class UsernameValidators {
   }
 
   static shouldBeUnique(control: AbstractControl): ValidationErrors | null {
-    let result;
+    let isFound;
     for (let user of users) {
       if ((control.value as string) === user) {
-        result = false;
+        isFound = true;
         break;
       }
 
-      else result = true;
+      else isFound = false;
     }
 
-    if (!result) return { shouldBeUnique: true };
+    if (isFound) return { shouldBeUnique: true };
     return null;
   }
 }
