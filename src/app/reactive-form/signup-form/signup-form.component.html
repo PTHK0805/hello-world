@@ -5,16 +5,17 @@
       formControlName="username" 
       type="text" 
       id="username" 
-      class="form-control">
+      class="form-control"
+      (change)="log(username)">
       
       <!--<div *ngIf="form.get('username')!.touched && form.get('username')!.invalid" 
           class="alert alert-danger">
         Username is required.
       </div>-->
       
-      <div *ngIf="username!.touched && username!.invalid" 
-          class="alert alert-danger">
-        Username is required.
+      <div *ngIf="username!.touched && username!.invalid" class="alert alert-danger">
+        <div *ngIf="username?.errors?.['required']">Username is required</div>
+        <div *ngIf="username?.errors?.['minlength']">Username should be mininum {{username?.errors?.['minlength'].requiredLength}} characters</div>
       </div>
   </div>
 
