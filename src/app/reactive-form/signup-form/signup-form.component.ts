@@ -19,6 +19,13 @@ export class SignUpFormComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
+  login() {
+    this.form.setErrors({
+      invalidLogin: true,
+    })
+    console.log(this.form.errors);
+  }
+
   get username() {
     return this.form.get('username');
   }
