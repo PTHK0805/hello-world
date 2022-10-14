@@ -1,0 +1,12 @@
+li{
+  cursor: pointer;
+}
+
+li:hover{
+  opacity: .6;
+}
+
+li:nth-of-type(even){
+  background-color: rgba(204, 204, 204, .6);
+}
+

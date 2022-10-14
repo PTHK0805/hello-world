@@ -18,6 +18,7 @@ import { InputFormatDirective } from './directives/input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormExerciseComponent } from './exercises/form-exercise/form-exercise.component';
 import { SignUpFormComponent } from './reactive-form/signup-form/signup-form.component';
+import { NewCourseFormComponent } from './reactive-form/new-course-form/new-course-form.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SignUpFormComponent } from './reactive-form/signup-form/signup-form.com
     InputFormatDirective,
     ContactFormComponent,
     FormExerciseComponent,
-    SignUpFormComponent
+    SignUpFormComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
