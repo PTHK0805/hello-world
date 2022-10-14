@@ -1,4 +1,4 @@
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 })
 export class NewCourseFormComponent {
 
-  form = new FormGroup({
-    topics: new FormArray([])
+  constructor(private fb: FormBuilder){}
+
+  //form = new FormGroup({
+  //  topics: new FormArray([])
+  //})
+
+  form = this.fb.group({
+    topics: this.fb.array([])
   })
 
   addTopic(topic: HTMLInputElement) {
