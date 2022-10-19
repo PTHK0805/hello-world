@@ -33,6 +33,14 @@ export class PostComponent implements OnInit {
       })
   }
 
+  updatePost(post: any, input: HTMLInputElement) {
+    this.http.patch(this.url + '/' + post.id, { title: input.value })
+      .subscribe(response => {
+        console.log(response);
+        this.posts.splice((post.id-1), 1, response);
+      });
+  }
+
   ngOnInit(): void {
   }
 
