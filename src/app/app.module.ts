@@ -19,7 +19,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormExerciseComponent } from './exercises/form-exercise/form-exercise.component';
 import { SignUpFormComponent } from './reactive-form/signup-form/signup-form.component';
 import { NewCourseFormComponent } from './reactive-form/new-course-form/new-course-form.component';
-
+import { PostComponent } from './consuming-http-services/components/post/post.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,17 +36,19 @@ import { NewCourseFormComponent } from './reactive-form/new-course-form/new-cour
     ContactFormComponent,
     FormExerciseComponent,
     SignUpFormComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     CourseService,
-    AuthorsService
+    AuthorsService,
   ],
   bootstrap: [AppComponent]
 })
