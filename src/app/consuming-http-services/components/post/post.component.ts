@@ -49,8 +49,13 @@ export class PostComponent implements OnInit {
           this.posts.splice(0, 0, post);
         },
         error: (err: Response) => {
-          alert('An unexpected error occurred');
-          console.log(err);
+          if (err.status === 400) {
+            //this.form.setErrors(err.json());
+          }
+          else {
+            alert('An unexpected error occurred');
+            console.log(err);
+          }
         }
       })
   }
@@ -81,8 +86,14 @@ export class PostComponent implements OnInit {
           console.log('Delete Post : ', deletedPost[0]);
         },
         error: (err: Response) => {
-          alert('An unexpected error occurred');
-          console.log(err);
+          if (err.status === 404) {
+            alert('This post has already been deleted.');
+            console.log(err);
+          }
+          else {
+            alert('An unexpected error occurred');
+            console.log(err);
+          }
 
         }
       })
