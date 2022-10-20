@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 
 import { Component, OnInit } from '@angular/core';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-post',
@@ -35,9 +36,10 @@ export class PostComponent implements OnInit {
 
   updatePost(post: any, input: HTMLInputElement) {
     this.http.patch(this.url + '/' + post.id, { title: input.value })
-      .subscribe(response => {
+      .subscribe(response => {  
         console.log(response);
-        this.posts.splice((post.id-1), 1, response);
+        let index = this.posts.indexOf(post);
+        this.posts.splice(index, 1, response);
       });
   }
 
