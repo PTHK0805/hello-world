@@ -12,12 +12,15 @@ export class PostComponent implements OnInit {
 
   posts: any;
   private url = 'https://jsonplaceholder.typicode.com/posts';
-  constructor(private http: HttpClient) { 
-    http.get(this.url)
-      .subscribe(response => {
-        this.posts = response;
-      })
-    }
+
+  constructor(private http: HttpClient) { }
+  
+  ngOnInit(): void {
+    this.http.get(this.url)
+    .subscribe(response => {
+      this.posts = response;
+    })
+  }
 
   createPost(input: HTMLInputElement) {
     let post: any = { title: input.value };
@@ -50,9 +53,6 @@ export class PostComponent implements OnInit {
        let deletedPost = this.posts.splice(index, 1);
         console.log('Delete Post : ',deletedPost[0]);
       })
-  }
-
-  ngOnInit(): void {
   }
 
 }
