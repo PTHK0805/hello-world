@@ -1,7 +1,6 @@
+import { PostService } from './../../services/post.service';
 import { HttpClient } from '@angular/common/http';
-
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-post',
@@ -11,12 +10,11 @@ import { delay } from 'rxjs';
 export class PostComponent implements OnInit {
 
   posts: any;
-  private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private postService: PostService) { }
   
   ngOnInit(): void {
-    this.http.get(this.url)
+   this.postService.getPosts()
     .subscribe(response => {
       this.posts = response;
     })
@@ -26,7 +24,8 @@ export class PostComponent implements OnInit {
     let post: any = { title: input.value };
     input.value = '';
 
-    this.http.post(this.url, JSON.stringify(post)) /*  <or>  */
+    this.postService.createPost(post)
+    //this.http.post(this.url, JSON.stringify(post)) /*  <or>  */
     //this.http.post(this.url, post)
       .subscribe(response => {
         post.id = response; /* <or> */
@@ -38,7 +37,8 @@ export class PostComponent implements OnInit {
   }
 
   updatePost(post: any, input: HTMLInputElement) {
-    this.http.patch(this.url + '/' + post.id, { title: input.value })
+    //this.http.patch(this.url + '/' + post.id, { title: input.value })
+    this.postService.updatePost(post, { title: input.value })
       .subscribe(response => {  
         console.log('Update Post : ',response);
         let index = this.posts.indexOf(post);
@@ -47,7 +47,8 @@ export class PostComponent implements OnInit {
   }
 
   deletePost(post: any) {
-    this.http.delete(this.url + '/' + post.id)
+    //this.http.delete(this.url + '/' + post.id)
+    this.postService.deletePost(post.id)
       .subscribe(response => {
         let index = this.posts.indexOf(post);
        let deletedPost = this.posts.splice(index, 1);
