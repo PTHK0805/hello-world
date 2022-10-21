@@ -1,3 +1,6 @@
+import { BadInputError } from '../../validators/bad-input';
+import { NotFoundError } from './../../validators/not-found-error';
+import { AppError } from './../../validators/app-error';
 import { PostService } from './../../services/post.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -25,9 +28,15 @@ export class PostComponent implements OnInit {
         next: (response) => {
           this.posts = response;
         },
-        error: (err: Response) => {
-          alert('An Unexpected error occurred');
-          console.log(err);
+        error: (err: AppError) => {
+          if (err instanceof NotFoundError) {
+            alert('Request URL does not Found');
+          }
+          
+          else {
+            alert('An Unexpected error occurred');
+            console.log(err);
+          }
         },
       })
 
@@ -48,8 +57,9 @@ export class PostComponent implements OnInit {
           console.log('Post : ', post);
           this.posts.splice(0, 0, post);
         },
-        error: (err: Response) => {
-          if (err.status === 400) {
+        error: (err: AppError) => {
+          if (err instanceof BadInputError) {
+            alert('Bad Input');
             //this.form.setErrors(err.json());
           }
           else {
@@ -78,15 +88,15 @@ export class PostComponent implements OnInit {
 
   deletePost(post: any) {
     //this.http.delete(this.url + '/' + post.id)
-    this.postService.deletePost(post.id)
+    this.postService.deletePost(300)
       .subscribe({
         next: response => {
           let index = this.posts.indexOf(post);
           let deletedPost = this.posts.splice(index, 1);
           console.log('Delete Post : ', deletedPost[0]);
         },
-        error: (err: Response) => {
-          if (err.status === 404) {
+        error: (err: AppError) => {
+          if (err instanceof NotFoundError) {
             alert('This post has already been deleted.');
             console.log(err);
           }
