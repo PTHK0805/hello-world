@@ -33,10 +33,7 @@ export class PostComponent implements OnInit {
             alert('Request URL does not Found');
           }
           
-          else {
-            alert('An Unexpected error occurred');
-            console.log(err);
-          }
+          else throw err;
         },
       })
 
@@ -62,10 +59,7 @@ export class PostComponent implements OnInit {
             alert('Bad Input');
             //this.form.setErrors(err.json());
           }
-          else {
-            alert('An unexpected error occurred');
-            console.log(err);
-          }
+          else throw err;
         }
       })
   }
@@ -78,10 +72,6 @@ export class PostComponent implements OnInit {
           console.log('Update Post : ', response);
           let index = this.posts.indexOf(post);
           this.posts.splice(index, 1, response);
-        },
-        error: (err: Response) => {
-          alert('An unexpected error occurred');
-          console.log(err);
         }
       });
   }
@@ -100,10 +90,7 @@ export class PostComponent implements OnInit {
             alert('This post has already been deleted.');
             console.log(err);
           }
-          else {
-            alert('An unexpected error occurred');
-            console.log(err);
-          }
+          else throw err;
 
         }
       })
