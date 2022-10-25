@@ -25,9 +25,8 @@ export class PostComponent implements OnInit {
       //  console.log(error);
       //})
       .subscribe({
-        next: (response) => {
-          this.posts = response;
-        },
+        next: posts => this.posts = posts,
+
         error: (err: AppError) => {
           if (err instanceof NotFoundError) {
             alert('Request URL does not Found');
@@ -49,10 +48,11 @@ export class PostComponent implements OnInit {
       //this.http.post(this.url, JSON.stringify(post)) /*  <or>  */
       //this.http.post(this.url, post)
       .subscribe({
-        next: response => {
-          post.id = response; /* <or> */
+        next: newPost => {
+          post.id = newPost; /* <or> */
           //post = response;
-          console.log('Respone : ', response)
+          
+          console.log('Respone : ', newPost)
           console.log('Post : ', post);
           
         },
@@ -71,10 +71,10 @@ export class PostComponent implements OnInit {
     //this.http.patch(this.url + '/' + post.id, { title: input.value })
     this.postService.update(post, { title: input.value })
       .subscribe({
-        next: response => {
-          console.log('Update Post : ', response);
+        next: updatedPost => {
+          console.log('Update Post : ', updatedPost);
           let index = this.posts.indexOf(post);
-          this.posts.splice(index, 1, response);
+          this.posts.splice(index, 1, updatedPost);
         }
       });
   }
@@ -86,8 +86,7 @@ export class PostComponent implements OnInit {
     //this.http.delete(this.url + '/' + post.id)
     this.postService.delete(300)
       .subscribe({
-        next: response => {
-         
+        next: () => {
           console.log('Delete Post : ', post);
         },
         error: (err: AppError) => {
