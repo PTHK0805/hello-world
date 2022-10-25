@@ -1,3 +1,4 @@
+import { DataService } from './consuming-http-services/services/data.service';
 import { AppErrorHandler } from './consuming-http-services/validators/app-error-handler';
 import { ErrorHandler } from '@angular/core';
 import { FavoriteComponent } from './favorite/favorite.component';
@@ -51,7 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     CourseService,
     AuthorsService,
-    {provide: ErrorHandler, useClass: AppErrorHandler}
+    { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   bootstrap: [AppComponent]
 })
