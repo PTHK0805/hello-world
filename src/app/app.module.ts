@@ -24,6 +24,7 @@ import { SignUpFormComponent } from './reactive-form/signup-form/signup-form.com
 import { NewCourseFormComponent } from './reactive-form/new-course-form/new-course-form.component';
 import { PostComponent } from './consuming-http-services/components/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GithubFollowersComponent } from './exercises/github-followers/github-followers.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     SignUpFormComponent,
     NewCourseFormComponent,
     PostComponent,
+    GithubFollowersComponent,
   ],
   imports: [
     BrowserModule,

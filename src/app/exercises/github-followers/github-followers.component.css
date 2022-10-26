@@ -1,0 +1,19 @@
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+img {
+  width: 100px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+}
+
+.media-body {
+  float: left;
+  width: auto;
+  padding: 30px 0;
+}
+
